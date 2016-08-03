@@ -1,0 +1,22 @@
+配置文件 /etc/my.cnf
+修改默认储存引擎  在/etc/my.cnf  中[mysqld]下添加  default-storage-engine = 引擎名
+修改表储存引擎命令  alter table 表名  engine = 引擎名;
+查看创建表/数据库命令  SHOW CREATE TABLE/DATABASE 表名/库名；
+查看表结构  DESC 表名；
+修改表字段 ALTER TABLE 表名 CHANGE  旧列名   新列名  新数据类型；
+删除表中某条记录   DELETE FROM 表名 WHERE 条件；
+创建数据库时设置字符集编码  CREATE DATABASE 库名 DEFAULT CHARACTER UTF8;
+修改表字段   ALTER TABLE 表名 MODIFY 列名 数据类型  约束条件；
+插入记录  INSERT INTO 表名 (列名，列名，列名) VALUES (数据，数据，数据)；（位置对应）
+删除主键  ALTER TABLE 表名 DORP PRIMARY KEY;(会导致原主键形成UNI(唯一索引)约束)
+添加主键/唯一性约束  ALTER TABLE 表名 ADD  PRIMARY KEY  /  UNIQUE(列名);
+添加约束条件 ALTER TABLE 表名 ADD CONSTRAINT 约束条件名  约束条件  列名；
+删除约束条件 ALTER TABLE 表名 DROP CONSTRAINT 约束条件名  ；
+查看表约束条件  show index from 表名；
+删除唯一性约束 ALTER TABLE 表名 DROP index key_name;
+添加约束
+删除表中的某列  ALTER TABLE 表名 DROP COLUMN 列名；
+添加外键约束  ALTER TABLE 主表  ADD FOREIGN KEY(主表列) REFERENCES 从表（从表列）；
+删除外键约束  ALTER TABLE  主表  DROP FOREIGN KEY 外键名；
+添加默认约束 ALTER TABLE 表名s  ALTER COLUMN 列名 SET DEFAULT '默认值'；
+删除默认约束 ALTER TABLE 表名 ALTER 列名 DROP DEFAULT；
